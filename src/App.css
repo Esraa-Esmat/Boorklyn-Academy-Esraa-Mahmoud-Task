@@ -1,0 +1,46 @@
+.primary-color {
+    color: #002768;
+}
+.primary-color:hover {
+    color: #001f4d;
+}
+.primary-color-light {
+    color: #0d6efd;
+}
+
+.secondary-color {
+    color: #B60F35;
+}
+
+.btn {
+    background-color: #002768 !important;
+    border-color: #002768 !important;
+    color: light;
+}
+
+.primary-bg-color {
+    background-color: #002768;
+}
+
+.primary-border-color {
+    border-color: #002768;
+}
+
+.primary-text-color {
+    color: #ffffff;
+}
+
+.primary-bg-color:hover,
+.primary-border-color:hover {
+    background-color: #001f4d;
+    border-color: #001f4d;
+}
+
+.login-form-container {
+    background-color: #202020;
+}
+
+.btn-forgetPassword:hover {
+    color:rgb(255, 255, 255);
+
+}
