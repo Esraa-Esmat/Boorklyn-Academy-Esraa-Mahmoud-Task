@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Button, Container, Form, Image, InputGroup } from 'react-bootstrap';
+import { Button, Col, Container, Form, Image, InputGroup, Row } from 'react-bootstrap';
 import { FaRegEye, FaRegEyeSlash, FaLock } from 'react-icons/fa';
-import companyLogo from '../../assets/images/boorklynLogo.png';
+import companyLogo from '../../assets/images/boorklynLogo1.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { errorMsg, successMsg } from '../Toast/Toast';
+import '../../App.css';
 
 const ResetPasswordPage = () => {
   const navigate = useNavigate();
@@ -86,68 +87,70 @@ const ResetPasswordPage = () => {
 
   return (
     <Container className={`animate__animated animate__zoomIn login-page-container text-light text-center pt-5 vh-100 w-100 d-flex align-items-center justify-content-center ${isVisible ? "animate__animated animate__zoomIn" : ""}`} >
-      <Container className="login-form-container w-50 rounded-4 pb-4 pt-3 px-0 mt-5">
-        <Container className="logo-container text-center mb-5 position-absolute start-50 translate-middle" style={{ top: '22%' }}>
-          <Image src={companyLogo} alt="Company Logo" roundedCircle width="160" className="bg-light" />
-        </Container>
+      <Row className="login-form-container bg-light w-100 rounded-4   px-0 my-5">
+        <Col xs={5} className="logo-container text-center mt-3 d-flex justify-content-between align-items-center " >
+          <Container className='logoContainerImage rounded-circle  bg-white  position-relative ' >
+            <Image src={companyLogo} alt="Company Logo" className='m-auto   position-absolute start-50 translate-middle top-50' />
 
-        <Form onSubmit={handleSubmit} className="login-form px-4 pt-5 pb-1 mt-5">
-          <h4 className="text-center primary-color-light">Reset Password</h4>
-          <p className="text-secondary mb-0">{messages ? messages : "Create new password"}</p>
+          </Container>
+        </Col>
 
-
-
-
-
-          <div className="login-inputs rounded position-relative mt-1">
-            <InputGroup hasValidation>
-              <InputGroup.Text><FaLock className="primary-color" /></InputGroup.Text>
-              <Form.Control
-                id="reset_password"
-                autoComplete=""
-                className={`form-control px-5 ${isValid?.password?.invalid}`}
-                placeholder="Password"
-                name="password"
-                type={showPass ? "text" : "password"}
-                value={passwords?.password || ""}
-                onChange={handlePassInput}
-              />
-              <InputGroup.Text className="show-password" onClick={() => setShowPass(!showPass)}>
-                {showPass ? <FaRegEye className="secondary-color" /> : <FaRegEyeSlash className="primary-color" />}
-              </InputGroup.Text>
-            </InputGroup>
-          </div>
-
-          <div className="login-inputs rounded position-relative mt-1">
-            <InputGroup hasValidation>
-              <InputGroup.Text><FaLock className="primary-color" /></InputGroup.Text>
-              <Form.Control
-                id="reset_password_con"
-                autoComplete=""
-                className={`form-control px-5 ${isValid?.passwordCon?.invalid}`}
-                placeholder="Confirm Password"
-                name="passwordCon"
-                type={showPassCon ? "text" : "password"}
-                value={passwords?.passwordCon || ""}
-                onChange={handlePassConInput}
-              />
-              <InputGroup.Text className="show-password" onClick={() => setShowPassCon(!showPassCon)}>
-                {showPassCon ? <FaRegEye className="secondary-color" /> : <FaRegEyeSlash className="primary-color" />}
-              </InputGroup.Text>
-            </InputGroup>
-          </div>
-
-          <Button
-            className="btn btn-lg btn-primary text-uppercase fw-bold fs-6 w-100 my-3"
-            type="submit"
-            disabled={disableLogin}
-          >
-            {submitTitl}
-          </Button>
-        </Form>
+        <Col xs={7} className='px-4'>
+          <Form onSubmit={handleSubmit} className="login-form px-4  py-5 my-2">
+            <h4 className="text-center primary-color-light">Reset Password</h4>
+            <p className="text-secondary mb-0">{messages ? messages : "Create new password"}</p>
 
 
-      </Container>
+            <div className="login-inputs rounded position-relative mt-1">
+              <InputGroup hasValidation>
+                <InputGroup.Text><FaLock className="primary-color" /></InputGroup.Text>
+                <Form.Control
+                  id="reset_password"
+                  autoComplete=""
+                  className={`form-control px-5 ${isValid?.password?.invalid}`}
+                  placeholder="Password"
+                  name="password"
+                  type={showPass ? "text" : "password"}
+                  value={passwords?.password || ""}
+                  onChange={handlePassInput}
+                />
+                <InputGroup.Text className="show-password" onClick={() => setShowPass(!showPass)}>
+                  {showPass ? <FaRegEye className="secondary-color" /> : <FaRegEyeSlash className="primary-color" />}
+                </InputGroup.Text>
+              </InputGroup>
+            </div>
+
+            <div className="login-inputs rounded position-relative mt-1">
+              <InputGroup hasValidation>
+                <InputGroup.Text><FaLock className="primary-color" /></InputGroup.Text>
+                <Form.Control
+                  id="reset_password_con"
+                  autoComplete=""
+                  className={`form-control px-5 ${isValid?.passwordCon?.invalid}`}
+                  placeholder="Confirm Password"
+                  name="passwordCon"
+                  type={showPassCon ? "text" : "password"}
+                  value={passwords?.passwordCon || ""}
+                  onChange={handlePassConInput}
+                />
+                <InputGroup.Text className="show-password" onClick={() => setShowPassCon(!showPassCon)}>
+                  {showPassCon ? <FaRegEye className="secondary-color" /> : <FaRegEyeSlash className="primary-color" />}
+                </InputGroup.Text>
+              </InputGroup>
+            </div>
+
+            <Button
+              className="btn btn-lg btn-primary text-uppercase fw-bold fs-6 w-100 my-3 mt-4"
+              type="submit"
+              disabled={disableLogin}
+            >
+              {submitTitl}
+            </Button>
+          </Form>
+        </Col>
+
+
+      </Row>
     </Container>
   );
 };

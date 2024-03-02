@@ -36,11 +36,19 @@
     border-color: #001f4d;
 }
 
-.login-form-container {
-    background-color: #202020;
+.logoContainerImage{
+    width: 200px !important;
+    height: 200px !important;
+
+    border: 2px #001f4d  solid;
+}   
+.logoContainerImage img{
+    width: 78% !important;
+    /* margin-right: 10px !important;
+    height: 40 !important; */
+  
+
 }
-
-.btn-forgetPassword:hover {
-    color:rgb(255, 255, 255);
-
+.imgBorder{
+    border:2px #001f4d solid;
 }

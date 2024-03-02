@@ -77,9 +77,9 @@ const ForgetPasswordPage = () => {
 
   return (
     <Container className="animate__animated animate__zoomIn login-page-container text-light text-center pt-5 vh-100 w-100 d-flex align-items-center justify-content-center">
-      <Container className="login-form-container w-50 rounded-4 pb-4 pt-1 px-0 mt-5">
-        <Container className="logo-container text-center mb-5 position-absolute start-50 translate-middle" style={{ top: '25%' }}>
-          <Image src={companyLogo} alt="Company Logo" roundedCircle width="160" className="bg-light" />
+      <Container className="login-form-container bg-light w-50 rounded-4 pb-4 pt-1 px-0 mt-5">
+        <Container className="logo-container text-center mb-5 position-absolute start-50 translate-middle" style={{ top: '26%' }}>
+          <Image src={companyLogo} alt="Company Logo" roundedCircle width="160" className='bg-white imgBorder' />
         </Container>
 
         <Form onSubmit={handleSubmit} className="login-form px-4 pt-5 pb-1 mt-5">
@@ -120,16 +120,16 @@ const ForgetPasswordPage = () => {
 
             (
               <>
-                <h6 className="text-center fw-bold py-1">
-                  <Link to="/resetpassword" className="hover_primary shadow text_primary">
-                    <MdKeyboardArrowLeft className="text_primary" /> <span >Go to Reset Password</span>
+                <h6 className="text-center fw-bold py-1 ">
+                  <Link to="/resetpassword" className=" text-primary ">
+                    <MdKeyboardArrowLeft className="text-primary" /> Go to Reset Password
                   </Link>
                 </h6></>
             )
           }
 
         </Form>
-        <h6 className="mt-2">
+        <h6 className="mt-2 text-dark">
           Don't have an account yet ?{' '}
           <Link to="/signup" className="text_primary fw-bold">
             Sign up

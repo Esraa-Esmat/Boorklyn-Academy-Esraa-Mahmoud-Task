@@ -57,9 +57,9 @@ const Signup = () => {
 
   return (
     <Container className="animate__animated animate__zoomIn login-page-container text-light text-center pt-5 pb-2 vh-100 w-100 d-flex align-items-center justify-content-center">
-      <Container className="login-form-container w-75 rounded-4 pb-4 pt-5 px-0 mt-5">
-        <Container className="logo-container text-center mb-5 pb-5 position-absolute start-50 translate-middle" style={{ top: "26%" }}>
-          <Image src={companyLogo} alt="Company Logo" roundedCircle width="160" className="bg-light" />
+      <Container className="login-form-container bg-light w-75 rounded-4 pb-4 pt-5 px-0 mt-5">
+        <Container className="logo-container  text-center mb-5 pb-5 position-absolute start-50 translate-middle" style={{ top: "26%" }}>
+          <Image src={companyLogo} alt="Company Logo" roundedCircle width="160" className='imgBorder bg-white' />
         </Container>
         <Form onSubmit={handleSubmit} className="login-form px-4 pt-5 pb-1 mt-5">
           <div className='row'>
@@ -172,7 +172,7 @@ const Signup = () => {
           </Button>
           
         </Form>
-        <p className="sign-up-already">
+        <p className="sign-up-already text-dark">
           Already have an account? <Link to="/login" className="sign-up-login">Login</Link>
         </p>
       </Container>
